@@ -1,5 +1,8 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+{% if user.is_authenticated %}
+    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endif %}
     <h2 class="page-header">{{ post.title }}</h2>
     <p class="date">by {{post.author}} on {{ post.published_date }} </p>
     <p>{{post.text|linebreaksbr}} </p>
