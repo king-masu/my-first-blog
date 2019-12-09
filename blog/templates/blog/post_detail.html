@@ -1,0 +1,6 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h2 class="page-header">{{ post.title }}</h2>
+    <p class="date">by {{post.author}} on {{ post.published_date }} </p>
+    <p>{{post.text|linebreaksbr}} </p>
+{% endblock %}
